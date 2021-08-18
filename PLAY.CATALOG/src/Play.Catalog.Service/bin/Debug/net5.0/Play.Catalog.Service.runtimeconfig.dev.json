@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Omri Alster\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Omri Alster\\.nuget\\packages"
+    ]
+  }
+}
