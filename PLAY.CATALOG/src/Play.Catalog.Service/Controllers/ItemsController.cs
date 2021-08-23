@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using Play.Catalog.Service.Dtos;
+using Play.Catalog.Service;
 
 namespace Play.Catalog.Service.Controllers
 {
@@ -24,8 +24,9 @@ namespace Play.Catalog.Service.Controllers
 
         // GET /items/{id}
         [HttpGet("{id}")]
-        public ItemDto GetItemById(Guid id){
-            return items.SingleOrDefault(item => item.Id == id);
+        public ActionResult<ItemDto> GetItemById(Guid id){
+            var currItem = items.SingleOrDefault(item => item.Id == id);
+            return currItem ?? (ActionResult<ItemDto>)NotFound();
         }
 
         // POST /items
@@ -40,6 +41,8 @@ namespace Play.Catalog.Service.Controllers
         [HttpPut("{id}")]
         public IActionResult UpdateItem(Guid id,UpdateItemDto ItemToUpdate){
             var index = items.FindIndex(item => item.Id == id);
+            if (index < 0)
+                return NotFound();
 
             items[index] = items[index] with {
                 Name = ItemToUpdate.Name,
@@ -53,6 +56,8 @@ namespace Play.Catalog.Service.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteItem(Guid id){
             var index = items.FindIndex(item => item.Id == id);
+            if (index < 0)
+                return NotFound();
             items.RemoveAt(index);
             return NoContent();
         }
