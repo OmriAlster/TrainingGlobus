@@ -27,3 +27,15 @@ C:\GlobusTrainingFull\TrainingGlobus\PLAY.CATALOG\src\Play.Catalog.Service\obj\D
 C:\GlobusTrainingFull\TrainingGlobus\PLAY.CATALOG\src\Play.Catalog.Service\obj\Debug\net5.0\ref\Play.Catalog.Service.dll
 C:\GlobusTrainingFull\TrainingGlobus\PLAY.CATALOG\src\Play.Catalog.Service\obj\Debug\net5.0\Play.Catalog.Service.pdb
 C:\GlobusTrainingFull\TrainingGlobus\PLAY.CATALOG\src\Play.Catalog.Service\obj\Debug\net5.0\Play.Catalog.Service.genruntimeconfig.cache
+C:\GlobusTrainingFull\TrainingGlobus\PLAY.CATALOG\src\Play.Catalog.Service\bin\Debug\net5.0\DnsClient.dll
+C:\GlobusTrainingFull\TrainingGlobus\PLAY.CATALOG\src\Play.Catalog.Service\bin\Debug\net5.0\MongoDB.Bson.dll
+C:\GlobusTrainingFull\TrainingGlobus\PLAY.CATALOG\src\Play.Catalog.Service\bin\Debug\net5.0\MongoDB.Driver.dll
+C:\GlobusTrainingFull\TrainingGlobus\PLAY.CATALOG\src\Play.Catalog.Service\bin\Debug\net5.0\MongoDB.Driver.Core.dll
+C:\GlobusTrainingFull\TrainingGlobus\PLAY.CATALOG\src\Play.Catalog.Service\bin\Debug\net5.0\MongoDB.Libmongocrypt.dll
+C:\GlobusTrainingFull\TrainingGlobus\PLAY.CATALOG\src\Play.Catalog.Service\bin\Debug\net5.0\SharpCompress.dll
+C:\GlobusTrainingFull\TrainingGlobus\PLAY.CATALOG\src\Play.Catalog.Service\bin\Debug\net5.0\runtimes\win\native\libzstd.dll
+C:\GlobusTrainingFull\TrainingGlobus\PLAY.CATALOG\src\Play.Catalog.Service\bin\Debug\net5.0\runtimes\win\native\snappy32.dll
+C:\GlobusTrainingFull\TrainingGlobus\PLAY.CATALOG\src\Play.Catalog.Service\bin\Debug\net5.0\runtimes\win\native\snappy64.dll
+C:\GlobusTrainingFull\TrainingGlobus\PLAY.CATALOG\src\Play.Catalog.Service\bin\Debug\net5.0\runtimes\linux\native\libmongocrypt.so
+C:\GlobusTrainingFull\TrainingGlobus\PLAY.CATALOG\src\Play.Catalog.Service\bin\Debug\net5.0\runtimes\osx\native\libmongocrypt.dylib
+C:\GlobusTrainingFull\TrainingGlobus\PLAY.CATALOG\src\Play.Catalog.Service\bin\Debug\net5.0\runtimes\win\native\mongocrypt.dll
