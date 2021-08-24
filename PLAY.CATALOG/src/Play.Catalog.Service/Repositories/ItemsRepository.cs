@@ -24,7 +24,7 @@ namespace Play.Catalog.Service.Repositories
         }
 
         public async Task<Item> GetByIdAsync(Guid id){
-            var filter = filterBuilder.Eq(entity => entity.Id,id);
+            FilterDefinition<Item> filter = filterBuilder.Eq(entity => entity.Id ,id);
             return await dbCollection.Find(filter).FirstOrDefaultAsync();
         }
 
@@ -39,12 +39,12 @@ namespace Play.Catalog.Service.Repositories
             if (item == null)
                 throw new NullReferenceException(nameof(item));
 
-            var filter = filterBuilder.Eq(entity => entity.Id,item.Id);
+            FilterDefinition<Item> filter = filterBuilder.Eq(entity => entity.Id,item.Id);
             await dbCollection.ReplaceOneAsync(filter,item);
         }
 
         public async Task DeleteAsync(Guid id){
-            var filter = filterBuilder.Eq(entity => entity.Id,id);
+            FilterDefinition<Item> filter = filterBuilder.Eq(entity => entity.Id,id);
             await dbCollection.DeleteOneAsync(filter);
         }
     }
