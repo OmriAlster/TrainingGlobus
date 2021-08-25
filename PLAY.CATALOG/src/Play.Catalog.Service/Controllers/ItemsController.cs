@@ -30,7 +30,9 @@ namespace Play.Catalog.Service.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<ItemDto>> GetItemByIdAsync(Guid id){
             var currItem = await ItemsRepository.GetByIdAsync(id);
-            return currItem.AsDto() ?? (ActionResult<ItemDto>)NotFound();
+            if (currItem == null)
+                return NotFound();
+            return currItem.AsDto();
         }
 
         // POST /items
