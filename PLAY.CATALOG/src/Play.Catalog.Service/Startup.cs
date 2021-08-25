@@ -18,6 +18,7 @@ using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
 using Play.Catalog.Service.Repositories;
 using Play.Catalog.Service.Settings;
+using Play.Catalog.Service.Entities;
 
 namespace Play.Catalog.Service
 {
@@ -40,14 +41,17 @@ namespace Play.Catalog.Service
 
             ServiceSettings = Configuration.GetSection(nameof(ServiceSettings)).Get<ServiceSettings>();
 
-            services.AddSingleton(_ =>
+            services.AddSingleton(serviceProvider =>
             {
                 var mongoDbSettings = Configuration.GetSection(nameof(MongoDbSettings)).Get<MongoDbSettings>();
                 var mongoClient = new MongoClient(mongoDbSettings.ConnectionString);
                 return mongoClient.GetDatabase(ServiceSettings.ServiceName);
             });
 
-            services.AddSingleton<IItemsRepository, ItemsRepository>();
+            services.AddSingleton<MongoRepository<Item>>(serviceProvider => {
+                var dataBase =  serviceProvider.GetService<IMongoDatabase>();
+                return new MongoRepository<Item>(dataBase, "items");
+            });
 
             services.AddControllers(options => options.SuppressAsyncSuffixInActionNames = false);
             services.AddSwaggerGen(c => c.SwaggerDoc("v1", new OpenApiInfo { Title = "Play.Catalog.Service", Version = "v1" }));
